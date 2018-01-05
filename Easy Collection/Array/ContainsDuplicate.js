@@ -5,17 +5,23 @@
  * @param {number[]} nums
  * @return {boolean}
  */
+// var containsDuplicate = function (nums) {
+//     nums = nums.sort();
+//     let bl = false;
+//     // let temnum = [];
+//     for (let i = 0; i < nums.length - 1; i++) {
+//         if (nums[i] === nums[i + 1]) {
+//             bl = true;
+//         } else {
+//             // temnum.push(nums[i])
+//         }
+//     }
+//     return bl
+// };
+
 var containsDuplicate = function (nums) {
-    nums = nums.sort();
-    let bl = false;
-    // let temnum = [];
-    for (let i = 0; i < nums.length - 1; i++) {
-        if (nums[i] === nums[i + 1]) {
-            bl = true;
-        } else {
-            // temnum.push(nums[i])
-        }
-    }
-    return bl
+    let set = new Set(nums);
+    return (set.size===nums.length)?false:true
 };
-containsDuplicate([1,2,2,2,3,4,5,8,7]);
+
+containsDuplicate([]);
